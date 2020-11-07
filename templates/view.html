@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Avid Downloader - Download</title>
+    </head>
+    <body>
+        <p><img src="{{ content.thumbnail }}" alt=""></p>
+        <p>{{ content.title }}</p>
+        <p>
+            <label for="videos">Select a Video</label>
+
+            <select name="videos" id="videos" onchange="selectVideo()">
+                {% for format in content.formats %}
+                    <option value="{{ format.url }}">{{ format.ext }} - {{ format.format }}</option>
+                {% endfor %}
+                
+            </select> 
+            <p>
+                <button><a href="#" id="dlLink">Download</a></button>
+            </p>
+        </p>
+
+        <script type="text/javascript">
+            function selectVideo() {
+                url = document.getElementById("videos").value
+                console.log(url);
+                document.getElementById("dlLink").href = url;
+            }
+
+            function downloadSelected() {
+
+            }
+        </script>
+    </body>
+</html>
