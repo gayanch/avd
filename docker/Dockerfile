@@ -1,6 +1,7 @@
-FROM alpine:latest
+FROM ubuntu:20.04
 
-RUN apk add python3 git py3-pip
+RUN apt update && \
+    apt install git python3 python3-pip
 RUN mkdir app
 
 WORKDIR /app
