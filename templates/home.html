@@ -12,48 +12,61 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <!-- <span class="h1">Avid Downloader</span> -->
-                    <img src="{{ url_for('static', filename='logo.png') }}"/>
-                </div>
-            </div>
-            <hr/>
-            <div class="align-self-center">
-                <div class="row">
-                    <div class="col-md-12">
-                        <input type="text" placeholder="video link here" id="videourl" class="form-control"/>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <!-- <span class="h1">Avid Downloader</span> -->
+                            <img src="{{ url_for('static', filename='logo.png') }}"/>
+                        </div>
                     </div>
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <button class="btn btn-lg btn-success" id="showDownloadsBtn">Find</button>
-                    </div>
-                </div>
-            </div>
-            <hr/>
 
-            <div id="downloadsSection" class="invisible panel panel-primary">
-                <div class="row">
-                    <div class="col-sm">
-                        <img id="videoThumbnail" src="#" height="240" width="320"/>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="badge badge-danger">
+                                <span class="h5">beta</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm">
-                        <p>
-                            <span class="h3" id="videoTitle"></span>
-                        </p>
-                        <p>
-                            <label for="videoQuality">Video Quality</label>
-                            <select class="form-control" id="videoQuality">
-                            </select>
-                        </p>
-                        <p>
-                            <button class="btn btn-success" id="downloadBtn">Download</button>
-                        </p>
+
+                    <hr/>
+                    <div class="align-self-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="video page link here" id="videourl" class="form-control"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-lg btn-success" id="showDownloadsBtn">Find</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+
+                    <div id="downloadsSection" class="invisible panel panel-primary">
+                        <div class="row">
+                            <div class="col-sm">
+                                <img id="videoThumbnail" src="#" height="240" width="320"/>
+                            </div>
+                            <div class="col-sm">
+                                <p>
+                                    <span class="h3" id="videoTitle"></span>
+                                </p>
+                                <p>
+                                    <label for="videoQuality">Video Quality</label>
+                                    <select class="form-control" id="videoQuality">
+                                    </select>
+                                </p>
+                                <p>
+                                    <button class="btn btn-success" id="downloadBtn">Download</button>
+                                </p>
+                            </div>
+                        </div>
+                        <hr/>
                     </div>
                 </div>
-                <hr/>
             </div>
         </div>
 
