@@ -7,7 +7,8 @@ RUN git clone https://github.com/gayanch/avd.git
 WORKDIR /app/avd
 RUN python3 -m venv appenv \
     && source appenv/bin/activate \
-    && pip install -r requirements.txt 
+    && pip install -r requirements.txt \
+    && mkdir /app/log
 
 FROM alpine:latest
 COPY --from=builder /app /app
@@ -16,5 +17,7 @@ RUN apk add --update python3 \
     && adduser -S appuser -G appgroup \
     && chown -R appuser:appgroup /app 
 WORKDIR /app/avd
+EXPOSE 5000
+VOLUME [ "/app/log" ]
 USER appuser
 ENTRYPOINT [ "sh", "startavd.sh" ]
